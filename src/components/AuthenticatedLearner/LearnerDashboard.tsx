@@ -1,10 +1,10 @@
 
 import Avatar from '@material-ui/core/Avatar';
 import * as React from 'react';
-import { Container, Row } from 'reactstrap';
+import { Collapse, Container } from 'reactstrap';
 
-class LearnerDashBoard extends React.PureComponent {
-    public render() {
+const LearnerDashboard =()=> {
+
         return (
             <Container>
                 <div>
@@ -20,12 +20,12 @@ class LearnerDashBoard extends React.PureComponent {
                             </tr>
                             <tr>
                                 <td>
-                                    Dashboard
+                                    <a>Dashboard</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Profile
+                                    <a> Profile</a>
                                 </td>
                             </tr>
                             <tr>
@@ -37,11 +37,13 @@ class LearnerDashBoard extends React.PureComponent {
                     </div>
                     <div className="ml-3">
                         <h6>Dashboard Landing Page</h6>
+                        <div id="content">
+                        
+                        </div>
                     </div>
                 </div>
             </Container>
-        )    
-    }
+        )
 }
 
-export default LearnerDashBoard;
+    export default LearnerDashboard;
