@@ -9,7 +9,7 @@ class Learners extends React.PureComponent {
                 <h2>Learners</h2>
                 <p>
                     <h5>Career Development Programme</h5> 
-                    <div className="float-right"><AuthBtton/> </div>
+                    <div className="float-right"><AuthBtton/></div>
                 </p>
                     <p>
                         Flying Scroll Enlightenment career development programme prepares high school learners to be more competitive in global economic activities

@@ -1,9 +1,9 @@
 .card{
-   border-color: rgb(66, 39, 116);
+   border-color: blue;
 }
 
 h5{
-    color: rgb(66, 39, 116);
+    color: blue;
 }
 div{
     animation:fadeInAnimation ease 1s;
