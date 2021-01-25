@@ -6,7 +6,7 @@ class PersonalDetails extends React.PureComponent {
         return (
             <Container>
                 <div>
-                    <form>
+                    <form >
                         <div className="form-group">
                             <label htmlFor="exampleInputEmail1">Email address</label>
                             <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Provide email" />
@@ -17,10 +17,10 @@ class PersonalDetails extends React.PureComponent {
                         </div>
                         <div className="form-group form-check">
                             <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                            <label className="form-check-label" htmlFor="exampleCheck1">Remember me</label>
+                            <label className="form-check-label ml-3" htmlFor="exampleCheck1">Remember me</label>
                         </div >
                         <button type="submit" className="btn btn-primary">Submit</button>
-                    </form >
+                    </form>
                 </div>
             </Container>
         );
