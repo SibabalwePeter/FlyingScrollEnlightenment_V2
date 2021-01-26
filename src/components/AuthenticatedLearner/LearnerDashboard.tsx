@@ -18,7 +18,7 @@ const LearnerDashboard =()=> {
                         <li><a href="#assessment" data-toggle="tab">Assessment</a></li>
                     </ul>
                 </div>
-                <div className="tab-content col-5 float-right">
+                <div className="tab-content float-right col-9">
                     <div id="dashboard" className="tab-pane fade in active"><h5>Menu 1</h5></div>
                     <div id="personalDetails" className="tab-pane fade"><PersonalDetails/></div>
                     <div id="assessment" className="tab-pane fade"><AssessmentStepper/></div>

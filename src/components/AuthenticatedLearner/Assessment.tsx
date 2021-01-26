@@ -5,6 +5,7 @@ import Step from '@material-ui/core/Step';
 import StepButton from '@material-ui/core/StepButton';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Questions from './Questions'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,7 +33,7 @@ function getSteps() {
 function getStepContent(step: number) {
   switch (step) {
     case 0:
-      return 'Step 1: Select campaign settings...';
+      return <Questions/>;
     case 1:
       return 'Step 2: What is an ad group anyways?';
     case 2:
