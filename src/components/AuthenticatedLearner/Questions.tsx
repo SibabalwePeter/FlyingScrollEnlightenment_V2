@@ -82,11 +82,11 @@ class Questions extends React.PureComponent {
                     <tbody>
                         {questions.map(question=> (
                             <tr>
+                                <td><input className="form-check-input" type="radio" name={question} value={-2} /></td>
+                                <td><input className="form-check-input" type="radio" name={question} value={-1} /></td>
+                                <td><input className="form-check-input" type="radio" name={question} value={0} /></td>
                                 <td><input className="form-check-input" type="radio" name={question} value={1} /></td>
                                 <td><input className="form-check-input" type="radio" name={question} value={2} /></td>
-                                <td><input className="form-check-input" type="radio" name={question} value={0} /></td>
-                                <td><input className="form-check-input" type="radio" name={question} value={4} /></td>
-                                <td><input className="form-check-input" type="radio" name={question} value={5} /></td>
                                 <td>{question}</td>
                             </tr>
                         ))
