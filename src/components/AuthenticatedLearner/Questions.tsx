@@ -1,5 +1,14 @@
 import * as React from 'react';
 import { Container } from 'reactstrap';
+import { RouteComponentProps } from 'react-router';
+import { ApplicationState } from '../../store';
+import * as AssessmentStore from '../../store/Assessment';
+import { connect } from 'react-redux';
+
+type AssessmentProps =
+    AssessmentStore.AssessmentState &
+    typeof AssessmentStore.actionCreators &
+    RouteComponentProps<{}>;
 
 const questions = ['Build kitchen cabinets (Realistic = R)',
     'Lay brick or tile (R)',
@@ -64,7 +73,30 @@ const questions = ['Build kitchen cabinets (Realistic = R)',
     'Keep inventory records(C)',
     'Stamp, sort, and distribute mail for an organization(C)']
 
-class Questions extends React.PureComponent {
+const Choice =(e: { target: any; })=> {
+    const category = e.target.name.charAt(e.target.name.length - 2);
+    switch (category) {
+        case 'R':
+            console.log("choice triggered");
+            return AssessmentStore.actionCreators.incrementRealistic;
+        case 'I':
+            return AssessmentStore.actionCreators.incrementRealistic; 
+        case 'A':
+            return AssessmentStore.actionCreators.incrementRealistic; 
+        case 'S':
+            return AssessmentStore.actionCreators.incrementRealistic;
+        case 'E':
+            return AssessmentStore.actionCreators.incrementRealistic;
+        case 'C':
+            return AssessmentStore.actionCreators.incrementRealistic;
+        default:
+            return "";
+
+    }
+}
+
+class Questions extends React.PureComponent{
+
     public render() {
         return (
             <Container>
@@ -82,7 +114,7 @@ class Questions extends React.PureComponent {
                     <tbody>
                         {questions.map(question=> (
                             <tr>
-                                <td><input className="form-check-input" type="radio" name={question} value={-2} /></td>
+                                <td><input className="form-check-input" type="radio" name={question} value={-2} onClick={Choice}/></td>
                                 <td><input className="form-check-input" type="radio" name={question} value={-1} /></td>
                                 <td><input className="form-check-input" type="radio" name={question} value={0} /></td>
                                 <td><input className="form-check-input" type="radio" name={question} value={1} /></td>
@@ -98,4 +130,4 @@ class Questions extends React.PureComponent {
     }
 };
 
-export default Questions;
+export default Questions
