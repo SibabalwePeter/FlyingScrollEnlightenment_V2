@@ -1,13 +1,24 @@
+import { VideoCallRounded } from '@material-ui/icons';
+import { debug } from 'console';
 import { Action, Reducer } from 'redux';
 
 // Assessment State
 export class AssessmentState {
-    Realistic!: number;
-    Investigative!: number;
-    Artistic!: number;
-    Social!: number;
-    Enterprising!: number;
-    Conventional!: number;
+    Realistic: number =0;
+    Investigative: number=0;
+    Artistic: number=0;
+    Social: number=0;
+    Enterprising: number=0;
+    Conventional: number=0;
+}
+
+export var AssessmentStorage1 ={
+    Realistic: 0,
+    Investigative: 0,
+    Artistic: 0,
+    Social: 0,
+    Enterprising: 0,
+    Conventional: 0,
 }
 
 
@@ -33,40 +44,26 @@ export const actionCreators = {
 
 };
 
-export const Statstable = (state: any, category: string, value: number) => {
-    console.log("Stats table triggered")
+export const Statstable = (category: string, value: number) => {
     if (category === undefined) {
         return { Realistic: 0, Investigative: 0, Artistic: 0, Social: 0, Enterprising: 0, Conventional: 0 };
     }
-    console.log("Reducer:" + value)
-    switch (category) {
-        case 'R':
-            console.log(value);
-            return { Realistic: state.Realistic + value, Investigative: state.Investigative, Artistic: state.Artistic, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional };
-        case 'I':
-            return { Realistic: state.Realistic, Investigative: state.Investigative + value, Artistic: state.Artistic, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional };
-        case 'A':
-            return { Realistic: state.Realistic, Investigative: state.Investigative, Artistic: state.Artistic + value, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional };
-        case 'S':
-            return { Realistic: state.Realistic, Investigative: state.Investigative, Artistic: state.Artistic, Social: state.Social + value, Enterprising: state.Enterprising, Conventional: state.Conventional };
-        case 'E':
-            return { Realistic: state.Realistic, Investigative: state.Investigative, Artistic: state.Artistic, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional };
-        case 'C':
-            return { Realistic: state.Realistic, Investigative: state.Investigative, Artistic: state.Artistic, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional };
-        default:
-            return state;
-    }
-};
+    else if (category ==='R') AssessmentStorage1.Realistic =Number(AssessmentStorage1.Realistic) + Number(value);
+    else if (category === 'I') AssessmentStorage1.Investigative= Number(AssessmentStorage1.Investigative) + Number(value);
+    else if (category === 'A') AssessmentStorage1.Artistic= Number(AssessmentStorage1.Artistic) + Number(value);
+    else if (category === 'S') AssessmentStorage1.Social= Number(AssessmentStorage1.Social) + Number(value);
+    else if (category === 'E') AssessmentStorage1.Enterprising= Number(AssessmentStorage1.Enterprising ) + Number(value);
+    else if (category === 'C') AssessmentStorage1.Conventional= Number(AssessmentStorage1.Conventional ) + Number(value);
+}
 
 // REDUCER - For a given state and action, returns the new state.
 
-export const reducer: Reducer<AssessmentState> = (state: AssessmentState | undefined, incomingAction: Action): AssessmentState => {
+/*export const reducer: Reducer<AssessmentState> = (state: AssessmentState | undefined, incomingAction: Action): AssessmentState => {
     if (state === undefined) {
         return { Realistic: 0, Investigative: 0, Artistic: 0, Social: 0, Enterprising: 0, Conventional: 0 };
     }
 
     const action = incomingAction as KnownAction;
-    console.log("Reducer:" + action)
     switch (action.type) {
         case 'INCREMENT_Realistic':
             console.log(action);
@@ -84,4 +81,4 @@ export const reducer: Reducer<AssessmentState> = (state: AssessmentState | undef
         default:
             return state;
     }
-};
+};*/

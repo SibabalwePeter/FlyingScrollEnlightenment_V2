@@ -3,12 +3,9 @@ import { Container } from 'reactstrap';
 import { RouteComponentProps } from 'react-router';
 import { ApplicationState } from '../../store';
 import * as AssessmentStore from '../../store/Assessment';
+import '../../store/Assessment';
 import { connect } from 'react-redux';
-
-type AssessmentProps =
-    AssessmentStore.AssessmentState &
-    typeof AssessmentStore.actionCreators &
-    RouteComponentProps<{}>;
+/*import { AssessmentStorage } from '../../store/Assessment';*/
 
 const questions = ['Build kitchen cabinets (Realistic = R)',
     'Lay brick or tile (R)',
@@ -75,9 +72,7 @@ const questions = ['Build kitchen cabinets (Realistic = R)',
 
 const Choice = (e: { target: any; }) => {
     const category = e.target.name.charAt(e.target.name.length - 2);
-    console.log("choice triggered");
-    AssessmentStore.Statstable(AssessmentStore.AssessmentState, category, e.target.value);
-
+    AssessmentStore.Statstable(category, e.target.value);
 }
 
 class Questions extends React.PureComponent {

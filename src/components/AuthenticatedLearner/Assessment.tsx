@@ -11,11 +11,6 @@ import { ApplicationState } from '../../store';
 import * as AssessmentStore from '../../store/Assessment';
 import { connect } from 'react-redux';
 
-type AssessmentProps =
-  AssessmentStore.AssessmentState &
-  typeof AssessmentStore.actionCreators &
-  RouteComponentProps<{}>;
-
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
@@ -97,7 +92,13 @@ export default function AssessmentStepper() {
     const newCompleted = new Set(completed);
     newCompleted.add(activeStep);
     setCompleted(newCompleted);
-
+    console.log("Realistic: " + AssessmentStore.AssessmentStorage1.Realistic)
+    console.log("Investigative: " + AssessmentStore.AssessmentStorage1.Investigative)
+    console.log("Artistic: " + AssessmentStore.AssessmentStorage1.Artistic)
+    console.log("Social: " + AssessmentStore.AssessmentStorage1.Social)
+    console.log("Enterprising: " + AssessmentStore.AssessmentStorage1.Enterprising)
+    console.log("Conventional: " + AssessmentStore.AssessmentStorage1.Conventional)
+    
     /**
      * Sigh... it would be much nicer to replace the following if conditional with
      * `if (!this.allStepsComplete())` however state is not set when we do this,
