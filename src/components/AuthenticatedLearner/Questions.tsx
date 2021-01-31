@@ -42,7 +42,7 @@ const questions = ['Build kitchen cabinets (Realistic = R)',
     'Investigate the cause of a fire(I)',
     'Create special effects for movies(A)',
     'Paint sets for plays(A)',
-    'Do volunteer work at a non - profit organization(S)', 
+    'Do volunteer work at a non - profit organization(S)',
     'Teach children how to play sports(S)',
     'Start your own business(E)',
     'Negotiate business contracts(E)',
@@ -73,29 +73,14 @@ const questions = ['Build kitchen cabinets (Realistic = R)',
     'Keep inventory records(C)',
     'Stamp, sort, and distribute mail for an organization(C)']
 
-const Choice =(e: { target: any; })=> {
+const Choice = (e: { target: any; }) => {
     const category = e.target.name.charAt(e.target.name.length - 2);
-    switch (category) {
-        case 'R':
-            console.log("choice triggered");
-            return AssessmentStore.actionCreators.incrementRealistic;
-        case 'I':
-            return AssessmentStore.actionCreators.incrementRealistic; 
-        case 'A':
-            return AssessmentStore.actionCreators.incrementRealistic; 
-        case 'S':
-            return AssessmentStore.actionCreators.incrementRealistic;
-        case 'E':
-            return AssessmentStore.actionCreators.incrementRealistic;
-        case 'C':
-            return AssessmentStore.actionCreators.incrementRealistic;
-        default:
-            return "";
+    console.log("choice triggered");
+    AssessmentStore.Statstable(AssessmentStore.AssessmentState, category, e.target.value);
 
-    }
 }
 
-class Questions extends React.PureComponent{
+class Questions extends React.PureComponent {
 
     public render() {
         return (
@@ -112,13 +97,13 @@ class Questions extends React.PureComponent{
                         </tr>
                     </thead>
                     <tbody>
-                        {questions.map(question=> (
+                        {questions.map(question => (
                             <tr>
-                                <td><input className="form-check-input" type="radio" name={question} value={-2} onClick={Choice}/></td>
-                                <td><input className="form-check-input" type="radio" name={question} value={-1} /></td>
-                                <td><input className="form-check-input" type="radio" name={question} value={0} /></td>
-                                <td><input className="form-check-input" type="radio" name={question} value={1} /></td>
-                                <td><input className="form-check-input" type="radio" name={question} value={2} /></td>
+                                <td><input className="form-check-input" type="radio" name={question} value={-2} onClick={Choice} /></td>
+                                <td><input className="form-check-input" type="radio" name={question} value={-1} onClick={Choice} /></td>
+                                <td><input className="form-check-input" type="radio" name={question} value={0} onClick={Choice} /></td>
+                                <td><input className="form-check-input" type="radio" name={question} value={1} onClick={Choice} /></td>
+                                <td><input className="form-check-input" type="radio" name={question} value={2} onClick={Choice} /></td>
                                 <td>{question}</td>
                             </tr>
                         ))

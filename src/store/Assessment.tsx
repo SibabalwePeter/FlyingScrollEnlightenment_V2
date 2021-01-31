@@ -33,12 +33,37 @@ export const actionCreators = {
 
 };
 
+export const Statstable = (state: any, category: string, value: number) => {
+    console.log("Stats table triggered")
+    if (category === undefined) {
+        return { Realistic: 0, Investigative: 0, Artistic: 0, Social: 0, Enterprising: 0, Conventional: 0 };
+    }
+    console.log("Reducer:" + value)
+    switch (category) {
+        case 'R':
+            console.log(value);
+            return { Realistic: state.Realistic + value, Investigative: state.Investigative, Artistic: state.Artistic, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional };
+        case 'I':
+            return { Realistic: state.Realistic, Investigative: state.Investigative + value, Artistic: state.Artistic, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional };
+        case 'A':
+            return { Realistic: state.Realistic, Investigative: state.Investigative, Artistic: state.Artistic + value, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional };
+        case 'S':
+            return { Realistic: state.Realistic, Investigative: state.Investigative, Artistic: state.Artistic, Social: state.Social + value, Enterprising: state.Enterprising, Conventional: state.Conventional };
+        case 'E':
+            return { Realistic: state.Realistic, Investigative: state.Investigative, Artistic: state.Artistic, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional };
+        case 'C':
+            return { Realistic: state.Realistic, Investigative: state.Investigative, Artistic: state.Artistic, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional };
+        default:
+            return state;
+    }
+};
+
 // REDUCER - For a given state and action, returns the new state.
 
 export const reducer: Reducer<AssessmentState> = (state: AssessmentState | undefined, incomingAction: Action): AssessmentState => {
     if (state === undefined) {
-        return { Realistic: 0, Investigative: 0, Artistic: 0, Social: 0, Enterprising: 0, Conventional:0};
-        }
+        return { Realistic: 0, Investigative: 0, Artistic: 0, Social: 0, Enterprising: 0, Conventional: 0 };
+    }
 
     const action = incomingAction as KnownAction;
     console.log("Reducer:" + action)
@@ -47,13 +72,13 @@ export const reducer: Reducer<AssessmentState> = (state: AssessmentState | undef
             console.log(action);
             return { Realistic: state.Realistic + 1, Investigative: state.Investigative, Artistic: state.Artistic, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional };
         case 'INCREMENT_Investigative':
-            return { Realistic: state.Realistic + 1, Investigative: state.Investigative, Artistic: state.Artistic, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional}; 
+            return { Realistic: state.Realistic + 1, Investigative: state.Investigative, Artistic: state.Artistic, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional };
         case 'INCREMENT_Artistic':
             return { Realistic: state.Realistic + 1, Investigative: state.Investigative, Artistic: state.Artistic, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional };
         case 'INCREMENT_Social':
-            return { Realistic: state.Realistic + 1, Investigative: state.Investigative, Artistic: state.Artistic, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional};
+            return { Realistic: state.Realistic + 1, Investigative: state.Investigative, Artistic: state.Artistic, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional };
         case 'INCREMENT_Enterprising':
-            return { Realistic: state.Realistic + 1, Investigative: state.Investigative, Artistic: state.Artistic, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional};
+            return { Realistic: state.Realistic + 1, Investigative: state.Investigative, Artistic: state.Artistic, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional };
         case 'INCREMENT_Conventional':
             return { Realistic: state.Realistic + 1, Investigative: state.Investigative, Artistic: state.Artistic, Social: state.Social, Enterprising: state.Enterprising, Conventional: state.Conventional };
         default:
