@@ -3,11 +3,8 @@ import { Collapse, Container, Navbar, NavbarToggler, NavItem, NavLink } from 're
 import { Link } from 'react-router-dom';
 import '../Styles/NavMenu.css';
 import logo2 from '../Pictures/Logo .png'
-import AuthBtton from './AothButton';
+import AuthBtton from './AuthButton';
 import { useAuth0 } from "@auth0/auth0-react";
-/* <img src={logo} alt='Logo' style={{width: 151, height: 76 }}/> <h3><strong>Flying Scroll Enlightenment</strong></h3>*/
-
-/*export default class NavMenu extends React.PureComponent<{}, { isOpen: boolean }> {*/
 
 const NavMenu = () => {
     const { isAuthenticated } = useAuth0();
@@ -37,7 +34,9 @@ const NavMenu = () => {
                                 < NavItem>
                                     <NavLink tag={Link} className="text-white ml-3" to="/LearnerDashBoard">Dashboard</NavLink>
                                 </NavItem>: ""}
-                                <NavItem><AuthBtton /></NavItem>
+                                <NavItem>
+                                    <NavLink className="ml-3"><AuthBtton /></NavLink>
+                                </NavItem>
                             </ul>
                         </Collapse>
                     </Container>
