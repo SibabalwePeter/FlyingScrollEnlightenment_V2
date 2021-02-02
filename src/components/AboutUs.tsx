@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Card, CardText, CardTitle, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap';
+import { Button, Card, CardText, CardTitle, Container, Form, FormGroup, Input, Label } from 'reactstrap';
 
 class AboutUs extends React.PureComponent {
     public render() {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Col, Collapse, Container } from 'reactstrap';
+import { Container } from 'reactstrap';
 import PersonalDetails from './PersonalDetails';
 import AssessmentStepper from './Assessment'
 

@@ -1,11 +1,7 @@
 import * as React from 'react';
 import { Container } from 'reactstrap';
-import { RouteComponentProps } from 'react-router';
-import { ApplicationState } from '../../store';
 import * as AssessmentStore from '../../store/Assessment';
 import '../../store/Assessment';
-import { connect } from 'react-redux';
-/*import { AssessmentStorage } from '../../store/Assessment';*/
 
 const questions = ['Build kitchen cabinets (Realistic = R)',
     'Lay brick or tile (R)',

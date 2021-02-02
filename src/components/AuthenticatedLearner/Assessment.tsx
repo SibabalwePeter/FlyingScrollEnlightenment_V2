@@ -6,10 +6,8 @@ import StepButton from '@material-ui/core/StepButton';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Questions from './Questions';
-import { RouteComponentProps } from 'react-router';
-import { ApplicationState } from '../../store';
 import * as AssessmentStore from '../../store/Assessment';
-import { connect } from 'react-redux';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {

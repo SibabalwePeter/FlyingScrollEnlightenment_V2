@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Collapse, Container, Navbar, NavbarToggler, NavItem, NavLink } from 'reactstrap';
+import { Collapse, Container, Navbar, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import '../Styles/NavMenu.css';
 import logo2 from '../Pictures/Logo .png'

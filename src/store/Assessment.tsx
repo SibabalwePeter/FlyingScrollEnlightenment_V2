@@ -1,7 +1,3 @@
-import { VideoCallRounded } from '@material-ui/icons';
-import { debug } from 'console';
-import { Action, Reducer } from 'redux';
-
 // Assessment State
 export class AssessmentState {
     Realistic: number =0;
