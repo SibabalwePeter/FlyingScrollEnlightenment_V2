@@ -1,5 +1,3 @@
-
-import Avatar from '@material-ui/core/Avatar';
 import * as React from 'react';
 import { Col, Collapse, Container } from 'reactstrap';
 import PersonalDetails from './PersonalDetails';

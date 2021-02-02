@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Container} from 'reactstrap';
 import CustomizedAccordions from './Learners_GradesProgrammes';
-import AuthBtton from './AothButton';
+
 class Learners extends React.PureComponent {
     public render() {
         return (
@@ -9,7 +9,6 @@ class Learners extends React.PureComponent {
                 <h2>Learners</h2>
                 <p>
                     <h5>Career Development Programme</h5> 
-                    <div className="float-right"><AuthBtton/></div>
                 </p>
                     <p>
                         Flying Scroll Enlightenment career development programme prepares high school learners to be more competitive in global economic activities
