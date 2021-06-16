@@ -31,8 +31,7 @@ const questions = [
     'L Tutor students',
     'C Work at a zoo',
     'I Take care of children',
-    'N Plan special diets',
-    ''
+    'N Plan special diets'
 ]
 
 const Choice = (e: { target: any; }) => {
