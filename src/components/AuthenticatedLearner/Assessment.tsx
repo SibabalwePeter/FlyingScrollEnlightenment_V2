@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Questions from './Questions';
 import * as AssessmentStore from '../../store/Assessment';
+import Results from './Assessmentresults';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -37,7 +38,7 @@ function getStepContent(step: number) {
     case 0:
       return <Questions />;
     case 1:
-      return 'Step 2: What is an ad group anyways?';
+      return <Results/>;
     case 2:
       return 'Step 3: This is the bit I really care about!';
     default:
