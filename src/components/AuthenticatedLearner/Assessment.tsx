@@ -8,6 +8,11 @@ import Typography from '@material-ui/core/Typography';
 import Questions from './Questions';
 import * as AssessmentStore from '../../store/Assessment';
 import Results from './Assessmentresults';
+import { createClient } from '@supabase/supabase-js'
+
+// Create a single supabase client for interacting with your database
+const supabase = createClient('https://yycteghcjljtwxywvjqe.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYyNjI2NzQyNCwiZXhwIjoxOTQxODQzNDI0fQ.VGZo1P7w0KQEYM-fJESrvMAVFFmlRbn6bYzzodxCtog')
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -78,6 +83,20 @@ export default function AssessmentStepper() {
 
     setActiveStep(newActiveStep);
   };
+
+  const handleSubmit=async ()=>{
+    const { data, error } = await supabase
+  .from('Learners')
+  .insert([
+    { Name: 'The Shire', Surname: 'abc' }
+  ])
+
+      /*const data = await supabase
+      .from('Learners')
+      .select('*')*/
+
+      console.log(data, error)
+  }
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
@@ -170,6 +189,15 @@ export default function AssessmentStepper() {
                     {completedSteps() === totalSteps() - 1 ? 'Finish' : 'Complete Step'}
                   </Button>
                 ))}
+
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleSubmit}
+                className={classes.button}
+              >
+                Submit
+              </Button>
             </div>
           </div>
         )}
