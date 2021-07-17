@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Container } from 'reactstrap';
 import * as AssessmentStore from '../../store/Assessment';
-import '../../store/Assessment';
 
 const questions = [
     'A Operate a printing press',
@@ -176,7 +175,6 @@ const questions = [
     'G Persuade people to buy',
     'G Stock shelve',
     'H Serve concession stand drinks'
-
 ]
 
 const Choice = (e: { target: any; }) => {
